@@ -4,37 +4,26 @@
   <head>
     <style>
       @import "compass/css3";
-      
-      body {
-        background-color: rgb(50,50,75);
-        margin: 0;
+
+      html {
+        background: #0E3741;
       }
-      
-      #follow-div {
-        width: 100px;
-        height: 90px;
-        border-radius: 80%;
-        background: white;
+
+      .circle {
         position: absolute;
         width: 50px;
         height: 50px;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-      }
-      
-      #blur {
-        width: 100%;
-        height: 100%;
-        backdrop-filter: blur(100px);
-        position: absolute;
-        top: 50%; left: 50%;
-        transform: translate(-50%, -50%);
+        background: white;
+        border-radius: 80%;
+        backface-visibility: hidden;
       }
     </style>
     
     <script>
-          var $circle = $('.follow-div');
+          var $circle = $('.circle');
 
       function moveCircle(e) {
         TweenLite.to($circle, 0.3, {
@@ -49,7 +38,8 @@
     </script>
   </head>
   <body>
-    <div class="follow-div">
-    <!--div id="blur"-->
+    <section id="canvas">
+      <div class="circle"></div>
+    </section>
   </body>
 </html>
